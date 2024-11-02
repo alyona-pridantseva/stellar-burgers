@@ -53,6 +53,7 @@ export const ingredientsSlice = createSlice({
   }
 });
 
+export const ingredientsSliceName = ingredientsSlice.name;
 export const ingredientsReducer = ingredientsSlice.reducer;
 export const {
   getIngredientsSelector,

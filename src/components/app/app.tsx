@@ -25,6 +25,7 @@ import { useDispatch } from '../../services/store';
 import { useEffect } from 'react';
 import { ProtectedRoute } from '../protected-route';
 import { fetchIngredienst } from '../../services/ingredients/ingredientsSlice';
+import { checkUserAuth } from '../../services/user/userSlice';
 
 export const AppRoute = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ export const AppRoute = () => {
   //получаем ингредиенты и аккаунт(первоначальная загрузка данных)
   useEffect(() => {
     dispatch(fetchIngredienst());
-    // dispatch(userProfile());
+    dispatch(checkUserAuth());
   }, [dispatch]);
 
   const moving = () => {
@@ -138,10 +139,8 @@ export const AppRoute = () => {
 
 const App = () => (
   <div className={styles.app}>
-    <BrowserRouter>
-      <AppHeader />
-      <AppRoute />
-    </BrowserRouter>
+    <AppHeader />
+    <AppRoute />
   </div>
 );
 

@@ -1,8 +1,5 @@
 import { useSelector } from '../../services/store';
-import {
-  isAuthCheckedSelector,
-  userDataSelector
-} from '../services/store/selectors';
+import { getAuthChecked, getUserData } from '../../services/user/userSlice';
 import { Navigate, useLocation } from 'react-router';
 import { Preloader } from '../ui/preloader';
 
@@ -12,11 +9,11 @@ type TProtectedRouteProps = {
 };
 
 export const ProtectedRoute = ({
-  onlyUnAuth,
+  onlyUnAuth = false,
   children
 }: TProtectedRouteProps) => {
-  const isAuthChecked = useSelector(isAuthCheckedSelector); // isAuthCheckedSelector — селектор получения состояния загрузки пользователя
-  const user = useSelector(userDataSelector); // userDataSelector — селектор получения пользователя из store
+  const isAuthChecked = useSelector(getAuthChecked); // getAuthChecked — селектор получения состояния загрузки пользователя
+  const user = useSelector(getUserData); // getUserData — селектор получения пользователя из store
   const location = useLocation();
 
   if (!isAuthChecked) {
