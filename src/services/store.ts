@@ -9,17 +9,26 @@ import { combineReducers } from '@reduxjs/toolkit';
 import {
   ingredientsSliceName,
   ingredientsReducer
-} from '../services/ingredients/ingredientsSlice';
+} from './ingredients/ingredientsSlice';
 import {
   burgerConstructorSliceName,
   burgerConstructorReducer
 } from './ConstructorBurger/BurgerSlices';
-import { userReducer, userSliceName } from '../services/user/userSlice';
+import { userReducer, userSliceName } from './user/userSlice';
+import { feedSliceName, feedReducer } from './feed/feedSlice';
+import {
+  orderDetailsSliceName,
+  orderDetailsReducer
+} from './order/orderDetailsSlice';
+import { ordersListSliceName, ordersListReducer } from './order/orderListSlice';
 
 const rootReducer = combineReducers({
   [ingredientsSliceName]: ingredientsReducer,
   [burgerConstructorSliceName]: burgerConstructorReducer,
-  [userSliceName]: userReducer
+  [feedSliceName]: feedReducer,
+  [orderDetailsSliceName]: orderDetailsReducer,
+  [userSliceName]: userReducer,
+  [ordersListSliceName]: ordersListReducer
 });
 
 const store = configureStore({

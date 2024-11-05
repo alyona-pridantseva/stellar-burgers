@@ -11,7 +11,6 @@ import {
 
 export const BurgerIngredients: FC = () => {
   const burgerIngredients = useSelector(getIngredientsSelector); // Ингредиенты бургера из состояния Redux
-  const burgerIngredientsError = useSelector(getIngredientsErrorSelector);
 
   const buns = burgerIngredients.filter(
     (ingredient) => ingredient.type === 'bun'
@@ -59,8 +58,6 @@ export const BurgerIngredients: FC = () => {
     if (tab === 'sauce')
       titleSaucesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
-  // return null;
 
   return (
     <BurgerIngredientsUI
