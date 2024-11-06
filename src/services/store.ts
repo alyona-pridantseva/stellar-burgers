@@ -20,15 +20,20 @@ import {
   orderDetailsSliceName,
   orderDetailsReducer
 } from './order/orderDetailsSlice';
-import { ordersListSliceName, ordersListReducer } from './order/orderListSlice';
+import { orderSliceName, orderReducer } from './order/orderSlice';
+import {
+  ordersListSliceName,
+  ordersListReducer
+} from './order/ordersListState';
 
 const rootReducer = combineReducers({
   [ingredientsSliceName]: ingredientsReducer,
   [burgerConstructorSliceName]: burgerConstructorReducer,
   [feedSliceName]: feedReducer,
+  [orderSliceName]: orderReducer,
+  [ordersListSliceName]: ordersListReducer,
   [orderDetailsSliceName]: orderDetailsReducer,
-  [userSliceName]: userReducer,
-  [ordersListSliceName]: ordersListReducer
+  [userSliceName]: userReducer
 });
 
 const store = configureStore({

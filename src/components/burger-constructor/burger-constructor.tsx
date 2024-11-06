@@ -12,8 +12,8 @@ import {
   getOrderLoading,
   getOrder,
   clearOrder
-} from '../../services/order/orderListSlice';
-import { orderBurger } from '../../services/order/orderListSlice';
+} from '../../services/order/orderSlice';
+import { orderBurger } from '../../services/order/orderSlice';
 
 export const BurgerConstructor: FC = () => {
   /** TODO: взять переменные constructorItems, orderRequest и orderModalData из стора */

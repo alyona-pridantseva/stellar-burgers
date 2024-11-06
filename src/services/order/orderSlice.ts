@@ -2,14 +2,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { orderBurgerApi } from '@api';
 import { TOrder } from '@utils-types';
 
-// Интерфейс состояния пользовательских заказов
-type TOrderListState = {
+type TOrderState = {
   order: TOrder | null;
   error: string | null;
   loading: boolean;
 };
 
-export const initialState: TOrderListState = {
+export const initialState: TOrderState = {
   order: null,
   error: null,
   loading: false
@@ -17,11 +16,11 @@ export const initialState: TOrderListState = {
 
 export const orderBurger = createAsyncThunk(
   `order/orderBurger`,
-  async (dataOrder: string[]) => orderBurgerApi(dataOrder)
+  async (data: string[]) => orderBurgerApi(data)
 );
 
-const ordersListSlice = createSlice({
-  name: 'ordersList',
+const orderSlice = createSlice({
+  name: 'order',
   initialState,
   reducers: {
     clearOrder: (state) => {
@@ -52,8 +51,8 @@ const ordersListSlice = createSlice({
   }
 });
 
-export const ordersListReducer = ordersListSlice.reducer;
-export const ordersListSliceName = ordersListSlice.name;
+export const orderReducer = orderSlice.reducer;
+export const orderSliceName = orderSlice.name;
 export const { getOrder, getOrderLoading, getOrderError } =
-  ordersListSlice.selectors;
-export const { clearOrder } = ordersListSlice.actions;
+  orderSlice.selectors;
+export const { clearOrder } = orderSlice.actions;
