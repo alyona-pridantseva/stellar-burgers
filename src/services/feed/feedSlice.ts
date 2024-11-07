@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getFeedsApi } from '@api';
-import { TOrder } from '@utils-types';
+import { getFeedsApi } from '../../utils/burger-api';
+import { TOrder } from '../../utils/types';
 
 type TFeedState = {
   orders: Array<TOrder>;
@@ -19,9 +19,7 @@ export const initialState: TFeedState = {
 };
 
 // Создание асинхронного Thunk для получения данных 'лента заказов'
-export const fetchFeed = createAsyncThunk('feed/fetchFeed', async () =>
-  getFeedsApi()
-);
+export const fetchFeed = createAsyncThunk('feed/fetchFeed', getFeedsApi);
 
 const feedSlice = createSlice({
   name: 'feed',

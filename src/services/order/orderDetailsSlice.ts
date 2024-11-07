@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getOrderByNumberApi } from '../../utils/burger-api';
-import { TOrder } from '@utils-types';
+import { TOrder } from '../../utils/types';
 
 type TOrderDetailsState = {
   orders: Array<TOrder> | null;

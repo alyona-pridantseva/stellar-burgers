@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getIngredientsApi } from '@api';
+import { getIngredientsApi } from '../../utils/burger-api';
 import { TIngredient } from '@utils-types';
 
 // начальное состояние
@@ -19,10 +19,7 @@ const initialState: TIngredientsState = {
 // получение данных ингредиентов(асинхронный экшен)
 export const fetchIngredienst = createAsyncThunk(
   'ingredients/fetchIngredients',
-  async () => {
-    const response = await getIngredientsApi();
-    return response;
-  }
+  getIngredientsApi
 );
 
 //11спр т.4 ур.6

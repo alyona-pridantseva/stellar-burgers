@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { orderBurgerApi } from '@api';
-import { TOrder } from '@utils-types';
+import { orderBurgerApi } from '../../utils/burger-api';
+import { TOrder } from '../../utils/types';
 
 type TOrderState = {
   order: TOrder | null;
@@ -25,8 +25,8 @@ const orderSlice = createSlice({
   reducers: {
     clearOrder: (state) => {
       state.order = null;
-      state.loading = false;
       state.error = null;
+      state.loading = false;
     }
   },
   selectors: {

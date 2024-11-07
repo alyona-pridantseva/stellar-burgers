@@ -13,17 +13,19 @@ export const Feed: FC = () => {
 
   useEffect(() => {
     dispatch(fetchFeed());
-  }, [dispatch]);
+  }, []);
 
   if (!orders.length) {
     return <Preloader />;
   }
 
-  <FeedUI
-    orders={orders}
-    //получение списка заказов
-    handleGetFeeds={() => {
-      dispatch(fetchFeed());
-    }}
-  />;
+  return (
+    <FeedUI
+      orders={orders}
+      //получение списка заказов
+      handleGetFeeds={() => {
+        dispatch(fetchFeed());
+      }}
+    />
+  );
 };
