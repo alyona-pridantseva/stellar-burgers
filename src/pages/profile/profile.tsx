@@ -5,18 +5,13 @@ import { getUserData, updateUser } from '../../services/user/userSlice';
 
 export const Profile: FC = () => {
   /** TODO: взять переменную из стора */
-  const userData = useSelector(getUserData);
+  const user = useSelector(getUserData);
   const dispatch = useDispatch();
-
-  const user = {
-    name: userData?.name || '',
-    email: userData?.email || ''
-  };
 
   // локальное состояние для формы профиля
   const [formValue, setFormValue] = useState({
-    name: user.name,
-    email: user.email,
+    name: user?.name || '',
+    email: user?.email || '',
     password: ''
   });
 
@@ -43,8 +38,8 @@ export const Profile: FC = () => {
   const handleCancel = (e: SyntheticEvent) => {
     e.preventDefault();
     setFormValue({
-      name: user.name,
-      email: user.email,
+      name: user?.name || '',
+      email: user?.email || '',
       password: ''
     });
   };
