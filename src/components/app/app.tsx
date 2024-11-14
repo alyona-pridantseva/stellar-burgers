@@ -34,18 +34,13 @@ export const AppRoute = () => {
   const location = useLocation();
 
   // получаем background (11cпринт т5 ур8)
-  const backgroundLocation = location.state?.backgroundLocation;
+  const backgroundLocation = location.state?.background;
 
   //получаем ингредиенты и аккаунт(первоначальная загрузка данных)
   useEffect(() => {
     dispatch(fetchIngredienst());
     dispatch(checkUserAuth());
   }, [dispatch]);
-
-  // const moving = () => {
-  //   // history.back();
-  //   navigate(-1);
-  // };
 
   return (
     <>
@@ -100,10 +95,11 @@ export const AppRoute = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path='/ingredients/:id'
           element={
-            <PageDetailsComponent title='Детали ингридиента'>
+            <PageDetailsComponent title='Детали ингредиента'>
               <IngredientDetails />
             </PageDetailsComponent>
           }

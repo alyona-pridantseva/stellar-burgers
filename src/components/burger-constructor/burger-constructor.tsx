@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   getIngredientsSelector,
   clearBurgerConstructor
-} from '../../services/ConstructorBurger/BurgerSlices';
+} from '../../services/constructorBurger/burgerSlices';
 import {
   getOrderLoading,
   getOrder,

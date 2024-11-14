@@ -13,7 +13,7 @@ import {
 import {
   burgerConstructorSliceName,
   burgerConstructorReducer
-} from './ConstructorBurger/BurgerSlices';
+} from './constructorBurger/burgerSlices';
 import { userReducer, userSliceName } from './user/userSlice';
 import { feedSliceName, feedReducer } from './feed/feedSlice';
 import {
