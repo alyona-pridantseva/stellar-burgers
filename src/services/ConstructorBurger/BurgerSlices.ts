@@ -13,7 +13,7 @@ export const initialState: IBurgerConstructorState = {
   ingredients: []
 };
 
-const burgerConstructorSlice = createSlice({
+export const burgerConstructorSlice = createSlice({
   name: 'burgerConstructor',
   initialState,
   reducers: {
