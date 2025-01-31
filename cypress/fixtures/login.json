@@ -1,7 +1,8 @@
+// по воркшопу
 {
   "success": true,
   "user": {
-    "email": "pridantseva.alyona@gmail.com",
-    "name": "Алёна"
+    "email": "test@mail.com",
+    "name": "TestUser"
   }
 }

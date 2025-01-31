@@ -18,6 +18,7 @@ const testRootState = {
   [userSlice.name]: userSlice.getInitialState(),
 };
 
+// по примеру с воркшопа
 describe('тест для rootReducer', () => {
   test('объединение состояниий редюсеров', () => {
     const action = { type: 'SOME_ACTION' };

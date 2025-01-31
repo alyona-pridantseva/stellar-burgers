@@ -31,6 +31,7 @@ describe('тест для burgerConstructorSlice', () => {
     id: 'unique-id'
   };
 
+  // по примеру с воркшопа
   test('тест на добавление булки', () => {
     const action = burgerConstructorAction.addIngredients(testBunIngredient);
     const state = burgerConstructorReducer(initialState, action);
