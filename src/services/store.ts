@@ -26,7 +26,7 @@ import {
   ordersListReducer
 } from './order/ordersListState';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   [ingredientsSliceName]: ingredientsReducer,
   [burgerConstructorSliceName]: burgerConstructorReducer,
   [feedSliceName]: feedReducer,

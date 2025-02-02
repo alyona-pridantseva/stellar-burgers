@@ -21,7 +21,7 @@ export const initialState: TFeedState = {
 // Создание асинхронного Thunk для получения данных 'лента заказов'
 export const fetchFeed = createAsyncThunk('feed/fetchFeed', getFeedsApi);
 
-const feedSlice = createSlice({
+export const feedSlice = createSlice({
   name: 'feed',
   initialState,
   reducers: {},
