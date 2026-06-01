@@ -20,7 +20,7 @@ export const getOrdersListUser = createAsyncThunk(
   getOrdersApi
 );
 
-const ordersListSlice = createSlice({
+export const ordersListSlice = createSlice({
   name: 'ordersList',
   initialState,
   reducers: {},

@@ -19,7 +19,7 @@ export const orderBurger = createAsyncThunk(
   async (data: string[]) => orderBurgerApi(data)
 );
 
-const orderSlice = createSlice({
+export const orderSlice = createSlice({
   name: 'order',
   initialState,
   reducers: {
